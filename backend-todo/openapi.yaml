@@ -75,23 +75,6 @@ paths:
       summary: Delete
       description: Delete
       operationId: delete
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                password:
-                  type: string
-                  example: kewan
-                pseudo:
-                  type: string
-                  example: kewan
-            examples:
-              Delete:
-                value:
-                  password: kewan
-                  pseudo: kewan
       responses:
         '200':
           description: ''
@@ -129,23 +112,6 @@ paths:
       summary: Me
       description: Me
       operationId: me
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                password:
-                  type: string
-                  example: kewan
-                pseudo:
-                  type: string
-                  example: kewan
-            examples:
-              Me:
-                value:
-                  password: kewan
-                  pseudo: kewan
       responses:
         '200':
           description: ''
@@ -166,23 +132,6 @@ paths:
       summary: Tasks List
       description: Tasks List
       operationId: tasksList
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                password:
-                  type: string
-                  example: kewan
-                pseudo:
-                  type: string
-                  example: kewan
-            examples:
-              Tasks List:
-                value:
-                  password: kewan
-                  pseudo: kewan
       responses:
         '200':
           description: ''
@@ -219,23 +168,6 @@ paths:
       summary: Tasks Fetch
       description: Tasks Fetch
       operationId: tasksFetch
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                is_done:
-                  type: boolean
-                  example: true
-                name:
-                  type: string
-                  example: Finir ce projet
-            examples:
-              Tasks Fetch:
-                value:
-                  is_done: true
-                  name: Finir ce projet
       responses:
         '200':
           description: ''
