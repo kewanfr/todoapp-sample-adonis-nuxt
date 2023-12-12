@@ -1,0 +1,287 @@
+openapi: 3.0.3
+info:
+  title: TODO App
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://localhost
+paths:
+  /infos:
+    get:
+      tags:
+        - User
+      summary: Infos
+      description: Infos
+      operationId: infos
+      responses:
+        '200':
+          description: ''
+  /users:
+    put:
+      tags:
+        - User
+      summary: Update
+      description: Update
+      operationId: update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: kewan
+                pseudo:
+                  type: string
+                  example: kewan
+            examples:
+              Update:
+                value:
+                  password: kewan
+                  pseudo: kewan
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - User
+      summary: Register
+      description: Register
+      operationId: register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: kewanb
+                pseudo:
+                  type: string
+                  example: kewanb
+            examples:
+              Register:
+                value:
+                  password: kewanb
+                  pseudo: kewanb
+      responses:
+        '200':
+          description: ''
+    delete:
+      tags:
+        - User
+      summary: Delete
+      description: Delete
+      operationId: delete
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: kewan
+                pseudo:
+                  type: string
+                  example: kewan
+            examples:
+              Delete:
+                value:
+                  password: kewan
+                  pseudo: kewan
+      responses:
+        '200':
+          description: ''
+  /users/login:
+    post:
+      tags:
+        - User
+      summary: Login
+      description: Login
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: kewanb
+                pseudo:
+                  type: string
+                  example: kewanb
+            examples:
+              Login:
+                value:
+                  password: kewanb
+                  pseudo: kewanb
+      responses:
+        '200':
+          description: ''
+  /user:
+    get:
+      tags:
+        - User
+      summary: Me
+      description: Me
+      operationId: me
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: kewan
+                pseudo:
+                  type: string
+                  example: kewan
+            examples:
+              Me:
+                value:
+                  password: kewan
+                  pseudo: kewan
+      responses:
+        '200':
+          description: ''
+  /:
+    get:
+      tags:
+        - User
+      summary: Hello Word
+      description: Hello Word
+      operationId: helloWord
+      responses:
+        '200':
+          description: ''
+  /tasks:
+    get:
+      tags:
+        - Tasks
+      summary: Tasks List
+      description: Tasks List
+      operationId: tasksList
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: kewan
+                pseudo:
+                  type: string
+                  example: kewan
+            examples:
+              Tasks List:
+                value:
+                  password: kewan
+                  pseudo: kewan
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - Tasks
+      summary: Tasks Create
+      description: Tasks Create
+      operationId: tasksCreate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_done:
+                  type: boolean
+                  example: true
+                name:
+                  type: string
+                  example: Finir ce projet
+            examples:
+              Tasks Create:
+                value:
+                  is_done: true
+                  name: Finir ce projet
+      responses:
+        '200':
+          description: ''
+  /tasks/1:
+    get:
+      tags:
+        - Tasks
+      summary: Tasks Fetch
+      description: Tasks Fetch
+      operationId: tasksFetch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_done:
+                  type: boolean
+                  example: true
+                name:
+                  type: string
+                  example: Finir ce projet
+            examples:
+              Tasks Fetch:
+                value:
+                  is_done: true
+                  name: Finir ce projet
+      responses:
+        '200':
+          description: ''
+    put:
+      tags:
+        - Tasks
+      summary: Update Task
+      description: Update Task
+      operationId: updateTask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_done:
+                  type: boolean
+                  example: false
+                name:
+                  type: string
+                  example: Finir ce projet V1
+            examples:
+              Update Task:
+                value:
+                  is_done: false
+                  name: Finir ce projet V1
+      responses:
+        '200':
+          description: ''
+  /tasks/5:
+    delete:
+      tags:
+        - Tasks
+      summary: Delete Task
+      description: Delete Task
+      operationId: deleteTask
+      responses:
+        '200':
+          description: ''
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth: []
+tags:
+  - name: User
+  - name: Tasks
